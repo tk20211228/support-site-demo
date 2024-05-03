@@ -8,7 +8,8 @@ export default function SideBer() {
       <div className="flex flex-col gap-2">
         {TAGS.map((tag) => (
           <Button variant="ghost" className="justify-start" key={tag.id}>
-            <Link href={`/download/${tag.id}`}>{tag.label}</Link>
+            {/* <Link href={`/download/${tag.id}`}>{tag.label}</Link> */}
+            <Link href={`/download`}>{tag.label}</Link>
           </Button>
         ))}
       </div>

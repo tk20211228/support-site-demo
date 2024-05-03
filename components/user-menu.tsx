@@ -38,7 +38,7 @@ export default function UserMenu() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon" className="rounded-full">
           <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarImage src={`/adventurer-sample.svg`} alt="@shadcn" />
             <AvatarFallback>TK</AvatarFallback>
           </Avatar>
         </Button>

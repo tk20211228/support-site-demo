@@ -26,15 +26,13 @@ export default function ItemCard({
           {/* <ArrowUpRight size={16} className="inline" /> */}
         </Link>
       </h2>
-      <div className="flex relative z-10 flex-wrap mt-2 gap-2">
+      <div className="flex relative flex-wrap mt-2 gap-2">
         {tags.map((tag) => (
-          <Link
+          <p
             key={tag.id}
-            href={`/${tag.id}`}
-            className="border whitespace-nowrap text-muted-foreground bg-muted rounded-md text-xs px-1.5 py-1"
-          >
+            className="border whitespace-nowrap text-muted-foreground bg-muted rounded-md text-xs px-1.5 py-1" >
             {tag.label}
-          </Link>
+          </p>
         ))}
       </div>
     </div>
