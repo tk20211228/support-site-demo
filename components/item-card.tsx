@@ -2,16 +2,16 @@ import { Tag } from "@/app/types/tag";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { ExternalLink } from "../app/types/external-link";
+import { ArrowUpRight } from "lucide-react";
 
 export default function ItemCard({
-  href,
-  title,
-  tags,
+  linkName,
+  url,
   image,
 }: {
-  href: string;
-  title: string;
-  tags: Tag[];
+  linkName: string;
+  url: string;
   image: string;
 }) {
   return (
@@ -20,21 +20,13 @@ export default function ItemCard({
         <Image objectFit="cover" fill src={image} alt="" />
       </div>
       <h2 className="text-lg font-semibold">
-        <Link href={href} target="_blank">
-          {title}
+        <Link href={url} target="_blank">
+          {linkName}
           <span className="absolute inset-0"></span>
-          {/* <ArrowUpRight size={16} className="inline" /> */}
+          <ArrowUpRight size={16} className="inline" />
         </Link>
       </h2>
-      <div className="flex relative flex-wrap mt-2 gap-2">
-        {tags.map((tag) => (
-          <p
-            key={tag.id}
-            className="border whitespace-nowrap text-muted-foreground bg-muted rounded-md text-xs px-1.5 py-1" >
-            {tag.label}
-          </p>
-        ))}
-      </div>
+      <div className="flex relative flex-wrap mt-2 gap-2"></div>
     </div>
   );
 }

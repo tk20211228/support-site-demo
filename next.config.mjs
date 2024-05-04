@@ -3,8 +3,16 @@ const nextConfig = {
   // output: "export",
   // basePath: "/",
   images: {
-    // unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "supprot-site-demo.assets.newt.so",
+      },
+    ],
   },
+  // images: {
+  //   // unoptimized: true,
+  // },
 };
 
 export default nextConfig;
