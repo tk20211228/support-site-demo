@@ -8,7 +8,7 @@ import Nav from "./nav";
 
 export default function Header() {
   return (
-    <header className="container h-16 flex items-center border-b justify-between gap-5">
+    <header className="container h-16 flex items-center border-b justify-between gap-5 p-3">
       <MobileNav />
       <Button variant="ghost" className="w-[200px] relative ">
         <Image
@@ -21,9 +21,13 @@ export default function Header() {
           <span className="absolute inset-0"></span>
         </Link>
       </Button>
-      <Nav />
+      <div className="hidden lg:block">
+        <Nav />
+      </div>
       <span className="flex-1"></span>
-      <ModeToggle />
+      <div className="hidden lg:block">
+        <ModeToggle />
+      </div>
       <UserMenu />
     </header>
   );

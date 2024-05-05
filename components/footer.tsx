@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex justify-center text-sm text-muted-foreground p-4">
-        &copy; Zosiac
+        &copy; Zodiac
       </div>
     </footer>
   );

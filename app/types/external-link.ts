@@ -1,17 +1,34 @@
 import { types } from "util";
 
-export type Image = {
+export type ExternalLinkImage = {
+    _id: string;
+    _sys: [{}],
+    imageName: string;
+    imageSrc: imageSrc;
+    altText: string;
+    description: string;
+    fileName: string;
+    fileSize: number;
+    fileType: string;
+    height: number;
+    metadata: {};
+    src: string;
+    title: string;
+    width: number;
+};
+export type imageSrc = {
   _id: string;
-  src: string;
-  fileName: string;
-  fileType: string;
-  fileSize: number;
-  width: number;
-  height: number;
-  title: string;
+  _sys: [{}];
   altText: string;
   description: string;
-  metadata: Record<string, unknown>;
+  fileName: string;
+  fileSize: number;
+  fileType: string;
+  height: number;
+  metadata: {};
+  src: string;
+  title: string;
+  width: number;    
 };
 
 export type Sys = {
@@ -28,8 +45,15 @@ export type Sys = {
 
 export type ExternalLink = {
   _id: string;
-  // _sys: Sys;
+  _sys: Sys;
   linkName: string;
   url: string;
-  image: Image;
+  image: {
+    _id: string,
+    _sys: [Object],
+    imageName: string,
+    imageSrc: string
+  };
+  imageSrc: ExternalLinkImage;
+  explainLink: string;
 };

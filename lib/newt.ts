@@ -1,6 +1,6 @@
 import "server-only";
 import { createClient } from "newt-client-js";
-import { ExternalLink } from "@/app/types/external-link";
+import { ExternalLink, ExternalLinkImage, imageSrc } from "@/app/types/external-link";
 import { cache } from "react";
 
 const client = createClient({
@@ -14,8 +14,23 @@ export const getExternalLinks = cache(async () => {
     appUid: "external-link",
     modelUid: "external-link",
     query: {
-      select: ["_id", "linkName", "url", "image"],
+      select: ["_id", "no", "linkName", "url", "image","explainLink","tag",],
+      order: ['no'],
     },
   });
-  return items;
+  // console.log(items)
+
+  const updatedItems = await Promise.all(items.map(async (item) => {
+    const response = await client.getContents<ExternalLinkImage>({
+      appUid: "external-link",
+      modelUid: "image",
+      query: {
+        _id: item.image._id
+      },
+    });
+    // console.log("response",response)
+    return { ...item, imageSrc: response.items[0].imageSrc};
+  }));
+
+  return updatedItems;
 });

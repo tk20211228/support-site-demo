@@ -57,7 +57,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function Nav() {
   return (
-    <NavigationMenu className="hidden lg:block">
+    <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>ダウンロード</NavigationMenuTrigger>
