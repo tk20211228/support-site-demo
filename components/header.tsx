@@ -8,7 +8,7 @@ import Nav from "./nav";
 
 export default function Header() {
   return (
-    <header className="container h-16 flex items-center border-b justify-between gap-5 p-3">
+    <header className="container h-16 flex items-center border-b justify-between gap-2 p-3">
       <MobileNav />
       <Button variant="ghost" className="w-[200px] relative ">
         <Image
@@ -25,9 +25,9 @@ export default function Header() {
         <Nav />
       </div>
       <span className="flex-1"></span>
-      <div className="hidden lg:block">
-        <ModeToggle />
-      </div>
+      <ModeToggle />
+      {/* <div className="hidden lg:block">
+      </div> */}
       <UserMenu />
     </header>
   );

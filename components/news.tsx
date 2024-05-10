@@ -40,6 +40,7 @@ export default function News() {
           </CardFooter>
         </Card>
       </TabsContent>
+
       <TabsContent value="password">
         <Card>
           <CardHeader>
