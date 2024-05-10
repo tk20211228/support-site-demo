@@ -23,9 +23,7 @@ export default function News() {
         <Card>
           <CardHeader>
             <CardTitle>Account</CardTitle>
-            <CardDescription>
-              Make changes to your account here. Click save when you're done.
-            </CardDescription>
+            <CardDescription>test</CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
@@ -46,9 +44,7 @@ export default function News() {
         <Card>
           <CardHeader>
             <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you'll be logged out.
-            </CardDescription>
+            <CardDescription>test</CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">

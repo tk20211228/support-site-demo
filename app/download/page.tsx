@@ -4,7 +4,7 @@ import SideBer from "@/components/side-ber";
 
 export default async function Page() {
   const externalLinks = await getExternalLinks();
-  console.log("externalLink", externalLinks);
+  // console.log("externalLink", externalLinks);
   return (
     <div className="container p-0">
       <div className="min-h-dvh flex flex-col">
