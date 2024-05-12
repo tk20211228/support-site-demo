@@ -15,8 +15,8 @@ export const topItems: {
     content: "マニュアルページへ",
   },
   {
-    label: "Q & A",
-    url: "/qa",
-    content: "Q & Aページへ",
+    label: "F A Q",
+    url: "/faq",
+    content: "よくある質問ページへ",
   },
 ];

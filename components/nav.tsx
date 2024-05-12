@@ -15,7 +15,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "./ui/button";
-import { File, FileDown } from "lucide-react";
+import { Download, File, FileDown } from "lucide-react";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -69,7 +69,7 @@ export default function Nav() {
                     className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/download"
                   >
-                    <FileDown className="h-6 w-6" />
+                    <Download className="h-6 w-6" />
                     <div className="mb-2 mt-2 text-lg font-medium">
                       ダウンロード
                       <br />
@@ -115,7 +115,14 @@ export default function Nav() {
         <NavigationMenuItem>
           <Link href="/docs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Q & A
+              よくある質問
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/docs" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              お問い合わせ
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

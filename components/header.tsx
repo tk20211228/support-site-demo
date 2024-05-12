@@ -16,6 +16,7 @@ export default function Header() {
           alt=""
           className="object-cover object-center"
           fill
+          priority
         />
         <Link href="/">
           <span className="absolute inset-0"></span>
