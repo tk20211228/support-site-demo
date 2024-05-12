@@ -17,7 +17,7 @@ export default function News() {
       </TabsList>
 
       {news.map((item) => (
-        <TabsContent value={item.id}>
+        <TabsContent key={item.id} value={item.id}>
           <Card>
             <div className="flex justify-center">
               <CardHeader>
@@ -41,6 +41,7 @@ export default function News() {
                   {item.title === "お知らせ" &&
                     newsData.map((item) => (
                       <NewsCard
+                        key={item.id}
                         id={item.id}
                         title={item.title}
                         content={item.content}
@@ -49,6 +50,7 @@ export default function News() {
                   {item.title === "リリースノート" &&
                     releaseData.map((item) => (
                       <NewsCard
+                        key={item.id}
                         id={item.id}
                         title={item.title}
                         content={item.content}
