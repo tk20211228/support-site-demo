@@ -5,7 +5,6 @@ import { Separator } from "@/components/ui/separator";
 
 import News from "../components/news";
 import { topItems } from "./data/top-items";
-import NewTab from "@/components/news-card";
 
 export default function Home() {
   return (
@@ -13,7 +12,7 @@ export default function Home() {
       <div className="grid grid-cols-3 gap-3">
         {topItems.map((_, i) => (
           <div key={i} className="relative group">
-            <div className="border p-2 rounded-lg group-hover:shadow-lg transition duration-1000">
+            <div className="border p-2 lg:p-4 rounded-lg group-hover:shadow-lg transition duration-1000">
               <div className="flex items-center justify-center aspect-video bg-muted border rounded-lg mb-2">
                 <div className="group-hover:scale-110 lg:group-hover:scale-150 duration-1000 p-2">
                   {_.label === "ダウンロード" && <Download size={70} />}

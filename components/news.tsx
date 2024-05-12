@@ -15,13 +15,12 @@ export default function News() {
         <TabsTrigger value="notice">お知らせ</TabsTrigger>
         <TabsTrigger value="release-notes">リリースノート</TabsTrigger>
       </TabsList>
-
-      {news.map((item) => (
-        <TabsContent key={item.id} value={item.id}>
+      {news.map((newsItem) => (
+        <TabsContent key={newsItem.id} value={newsItem.id}>
           <Card>
             <div className="flex justify-center">
               <CardHeader>
-                <CardTitle>{item.title}</CardTitle>
+                <CardTitle>{newsItem.title}</CardTitle>
               </CardHeader>
             </div>
             <div className="flex justify-center">
@@ -38,22 +37,24 @@ export default function News() {
                 </div>
                 <Button>検索</Button>
                 <ul className="space-y-2">
-                  {item.title === "お知らせ" &&
+                  {newsItem.title === "お知らせ" &&
                     newsData.map((item) => (
                       <NewsCard
                         key={item.id}
                         id={item.id}
                         title={item.title}
                         content={item.content}
+                        tag={item.tag}
                       />
                     ))}
-                  {item.title === "リリースノート" &&
+                  {newsItem.title === "リリースノート" &&
                     releaseData.map((item) => (
                       <NewsCard
                         key={item.id}
                         id={item.id}
                         title={item.title}
                         content={item.content}
+                        tag={item.tag}
                       />
                     ))}
                 </ul>
