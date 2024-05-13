@@ -17,7 +17,7 @@ export default function NewsCard({ id, title, content, tag }: News) {
 
       <p>{content}</p>
 
-      <div className="flex relative Z-10 flex-wrap mt-2 gap-2 justify-between">
+      <div className="flex relative Z-10 flex-wrap mt-2 gap-2">
         {tag?.map((tag) => (
           <Link
             key={tag.id}
@@ -27,7 +27,8 @@ export default function NewsCard({ id, title, content, tag }: News) {
             {tag.title}
           </Link>
         ))}
-        <span className="flex-1"></span>
+      </div>
+      <div className="flex justify-between">
         <span className="flex-1"></span>
         <time className="text-sm text-muted-foreground px-1 py-0.5">
           {format(new Date(), "yyyy/MM/dd")}
