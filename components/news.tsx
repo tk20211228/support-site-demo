@@ -1,70 +1,68 @@
+import { format } from "date-fns";
+import { Search } from "lucide-react";
+
+import { news, newsData, releaseData } from "@/app/data/news";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import NewsCard from "./news-card";
 
 export default function News() {
   return (
-    <Tabs defaultValue="account" className="w-full">
+    <Tabs defaultValue="notice" className="w-full">
       <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="account">お知らせ</TabsTrigger>
-        <TabsTrigger value="password">リリースノート</TabsTrigger>
+        <TabsTrigger value="notice">お知らせ</TabsTrigger>
+        <TabsTrigger value="release-notes">リリースノート</TabsTrigger>
       </TabsList>
-
-      <TabsContent value="account">
-        <Card>
-          <CardHeader>
-            <CardTitle>Account</CardTitle>
-            <CardDescription>
-              Make changes to your account here. Click save when you're done.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" defaultValue="Pedro Duarte" />
+      {news.map((newsItem) => (
+        <TabsContent key={newsItem.id} value={newsItem.id}>
+          <Card>
+            <div className="flex justify-center">
+              <CardHeader>
+                <CardTitle>{newsItem.title}</CardTitle>
+              </CardHeader>
             </div>
-            <div className="space-y-1">
-              <Label htmlFor="username">Username</Label>
-              <Input id="username" defaultValue="@peduarte" />
+            <div className="flex justify-center">
+              <CardContent className="space-y-2 lg:w-1/2">
+                <div className="relative">
+                  <Search
+                    className="absolute left-2 top-2.5 text-muted-foreground"
+                    size={16}
+                  />
+                  <Input
+                    className="flex h-9 shadow-sm focus-visible:ring-1 pl-8"
+                    placeholder="Search"
+                  ></Input>
+                </div>
+                <Button>検索</Button>
+                <ul className="space-y-2">
+                  {newsItem.title === "お知らせ" &&
+                    newsData.map((item) => (
+                      <NewsCard
+                        key={item.id}
+                        id={item.id}
+                        title={item.title}
+                        content={item.content}
+                        tag={item.tag}
+                      />
+                    ))}
+                  {newsItem.title === "リリースノート" &&
+                    releaseData.map((item) => (
+                      <NewsCard
+                        key={item.id}
+                        id={item.id}
+                        title={item.title}
+                        content={item.content}
+                        tag={item.tag}
+                      />
+                    ))}
+                </ul>
+              </CardContent>
             </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save changes</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-      <TabsContent value="password">
-        <Card>
-          <CardHeader>
-            <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you'll be logged out.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
-              <Input id="new" type="password" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save password</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
+          </Card>
+        </TabsContent>
+      ))}
     </Tabs>
   );
 }
