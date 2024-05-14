@@ -1,7 +1,7 @@
 "use client";
 
-import * as React from "react";
 import Link from "next/link";
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 // import { Icons } from "@/components/icons"
@@ -14,44 +14,32 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button } from "./ui/button";
-import { Download, File, FileDown } from "lucide-react";
+import { Download } from "lucide-react";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs",
+    title: "クイックマニュアル",
+    href: "/manual",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "クイックマニュアルには、簡単な操作方法を説明したマニュアルがあります。",
   },
   {
-    title: "Hover Card",
-    href: "/docs",
+    title: "操作マニュアル",
+    href: "/manual",
     description:
-      "For sighted users to preview content available behind a link.",
+      "操作マニュアルには、詳細な操作方法を説明したマニュアルがあります。",
   },
   {
-    title: "Progress",
-    href: "/docs",
+    title: "機能別マニュアル",
+    href: "/manual",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "機能別マニュアルには、各機能の使い方を説明したマニュアルがあります。例えば、オプションアプリ、DEP、VPPなど。",
   },
   {
-    title: "Scroll-area",
-    href: "/docs",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs",
+    title: "システム共通資料",
+    href: "/manual",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "システム共通資料には、利用規約、ネットワーク要件、MDM証明書登録などを説明したマニュアルがあります。",
   },
 ];
 
@@ -62,8 +50,8 @@ export default function Nav() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>ダウンロード</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-2 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-4">
+            <ul className="grid gap-2 p-6 md:w-[400px] lg:w-[800px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-5">
                 <NavigationMenuLink asChild>
                   <Link
                     className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
@@ -71,9 +59,7 @@ export default function Nav() {
                   >
                     <Download className="h-6 w-6" />
                     <div className="mb-2 mt-2 text-lg font-medium">
-                      ダウンロード
-                      <br />
-                      一覧
+                      ダウンロード 一覧
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
                       コンソールやAgentのダウンロード一覧
@@ -81,17 +67,20 @@ export default function Nav() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/download" title="SDM管理コンソール">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem href="/download?q=console" title="コンソール">
+                コンソールアプリのダウンロードページに移動します。
               </ListItem>
-              <ListItem href="/download" title="Installation">
-                How to install dependencies and structure your app.
+              <ListItem href="/download" title="Android">
+                Android用のアプリをダウンロードするページに移動します。
               </ListItem>
-              <ListItem href="/download" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/download" title="iOS">
+                iOS用のアプリをダウンロードするページに移動します。
               </ListItem>
-              <ListItem href="/download" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/download" title="macOS">
+                macOS用のアプリをダウンロードするページに移動します。
+              </ListItem>
+              <ListItem href="/download" title="Window">
+                Windows用のアプリをダウンロードするページに移動します。
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -99,7 +88,7 @@ export default function Nav() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>マニュアル</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[800px] ">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
