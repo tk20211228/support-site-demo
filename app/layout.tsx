@@ -6,7 +6,7 @@ import { Noto_Sans_JP } from "next/font/google";
 
 import Header from "@/components/header";
 import { ThemeProvider } from "@/components/provider/theme-provider";
-import SideBer from "@/components/side-ber";
+import SideBer from "@/app/download/components/side-ber";
 import { cn } from "@/lib/utils";
 
 import Footer from "../components/footer";

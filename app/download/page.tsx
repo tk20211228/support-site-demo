@@ -1,6 +1,6 @@
 import { getExternalLinks } from "@/lib/newt";
 import ItemCard from "@/components/item-card";
-import SideBer from "@/components/side-ber";
+import SideBer from "@/app/download/components/side-ber";
 
 export default async function Page() {
   const externalLinks = await getExternalLinks();

@@ -1,8 +1,8 @@
 import { TAGS } from "@/lib/tags";
-import { Button } from "./ui/button";
+import { Button } from "../../../components/ui/button";
 import Link from "next/link";
 
-export default function SideBer() {
+export default function ManualSideBer() {
   return (
     <div className="hidden lg:block w-50 border-r p-4">
       <div className="flex flex-col gap-2">
