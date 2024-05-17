@@ -19,3 +19,21 @@ export const TAGS: Tag[] = [
   },
 ];
 
+export const ManualTags: Tag[] = [
+  {
+    label: "クイックマニュアル",
+    id: "quickManual",
+  },
+  {
+    label: "操作マニュアル",
+    id: "operationManual",
+  },
+  {
+    label: "機能別利用の手引き",
+    id: "manualByFunction",
+  },
+  {
+    label: "システム共通資料",
+    id: "systemCommonManual",
+  },
+];
