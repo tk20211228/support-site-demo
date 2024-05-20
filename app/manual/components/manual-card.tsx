@@ -26,38 +26,16 @@ export default function ManualCard() {
             </div>
             <div className="flex justify-center">
               <CardContent className="space-y-2 lg:w-1/2">
-                <div className="relative">
-                  <Search
-                    className="absolute left-2 top-2.5 text-muted-foreground"
-                    size={16}
-                  />
-                  <Input
-                    className="flex h-9 shadow-sm focus-visible:ring-1 pl-8"
-                    placeholder="Search"
-                  ></Input>
-                </div>
-                <Button>検索</Button>
                 <ul className="space-y-2">
-                  {newsItem.title === "お知らせ" &&
-                    newsData.map((item) => (
-                      <NewsCard
-                        key={item.id}
-                        id={item.id}
-                        title={item.title}
-                        content={item.content}
-                        tag={item.tag}
-                      />
-                    ))}
-                  {newsItem.title === "リリースノート" &&
-                    releaseData.map((item) => (
-                      <NewsCard
-                        key={item.id}
-                        id={item.id}
-                        title={item.title}
-                        content={item.content}
-                        tag={item.tag}
-                      />
-                    ))}
+                  {newsData.map((item) => (
+                    <NewsCard
+                      key={item.id}
+                      id={item.id}
+                      title={item.title}
+                      content={item.content}
+                      tag={item.tag}
+                    />
+                  ))}
                 </ul>
               </CardContent>
             </div>
