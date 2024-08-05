@@ -2,7 +2,7 @@ import { Tag } from "@/app/types/tag";
 
 export const TAGS: Tag[] = [
   {
-    label: "SDM管理コンソール",
+    label: "管理コンソール",
     id: "console",
   },
   {
