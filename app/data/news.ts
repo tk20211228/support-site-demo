@@ -13,6 +13,15 @@ export const news: NewsTag[] = [
 
 export const newsData: News[] = [
   {
+    id: "1.1",
+    title: "サポートサイトリニューアルのお知らせ",
+    content: "4月30日(火)〜5月2日(木)のチャットサポートはお休みとなります",
+    tag: [
+      { id: "1", title: "お知らせ" },
+      { id: "2", title: "リニューアル" },
+    ],
+  },
+  {
     id: "1",
     title: "チャットサポート休業のお知らせ",
     content: "4月30日(火)〜5月2日(木)のチャットサポートはお休みとなります",
